@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="A simple personalized study planner and quiz practice app." />
+  <title>AI Study Planner & Quiz Generator</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header class="hero">
+    <div class="container">
+      <p class="eyebrow">EDUCATION • MINI PROJECT</p>
+      <h1>AI Study Planner <span>&</span> Quiz Generator</h1>
+      <p class="subtitle">Plan your study sessions, practice questions, and track your learning.</p>
+    </div>
+  </header>
+
+  <main class="container main-grid">
+    <section class="panel">
+      <div class="section-heading">
+        <div>
+          <p class="eyebrow">STEP 01</p>
+          <h2>Create your study plan</h2>
+        </div>
+        <span class="icon">📅</span>
+      </div>
+      <form id="planner-form">
+        <label for="student-name">Student name (optional)</label>
+        <input id="student-name" type="text" placeholder="e.g. Alex" />
+
+        <label for="subjects">Subjects</label>
+        <input id="subjects" type="text" required placeholder="e.g. Mathematics, Physics, Chemistry" />
+        <small>Separate subjects with commas.</small>
+
+        <div class="two-col">
+          <div>
+            <label for="hours">Study hours per day</label>
+            <input id="hours" type="number" min="1" max="12" value="3" required />
+          </div>
+          <div>
+            <label for="exam-date">Exam date (optional)</label>
+            <input id="exam-date" type="date" />
+          </div>
+        </div>
+
+        <label for="weak-topics">Topics to focus on (optional)</label>
+        <textarea id="weak-topics" rows="3" placeholder="e.g. Algebra, Laws of Motion"></textarea>
+        <button class="primary" type="submit">Generate study plan</button>
+      </form>
+      <div id="plan-output" class="output hidden" aria-live="polite"></div>
+    </section>
+
+    <section class="panel">
+      <div class="section-heading">
+        <div>
+          <p class="eyebrow">STEP 02</p>
+          <h2>Practice quiz</h2>
+        </div>
+        <span class="icon">✍️</span>
+      </div>
+      <p class="muted">Generate a small sample quiz for general study skills. For subject-specific questions, add your own questions below or connect an AI API in a future version.</p>
+      <button id="generate-quiz" class="secondary" type="button">Generate sample quiz</button>
+      <div id="quiz-output" class="quiz-output" aria-live="polite">
+        <p class="empty-state">Your quiz will appear here.</p>
+      </div>
+      <div id="quiz-result" class="result hidden" aria-live="polite"></div>
+    </section>
+
+    <section class="panel full-width">
+      <div class="section-heading">
+        <div>
+          <p class="eyebrow">PROJECT OVERVIEW</p>
+          <h2>How it works</h2>
+        </div>
+        <span class="icon">💡</span>
+      </div>
+      <div class="features">
+        <article><span>01</span><h3>Personalized planning</h3><p>Divide available study time across the subjects you enter.</p></article>
+        <article><span>02</span><h3>Quiz practice</h3><p>Answer sample questions and receive an instant score.</p></article>
+        <article><span>03</span><h3>Revision focus</h3><p>Include difficult topics in your plan and revisit them regularly.</p></article>
+      </div>
+      <p class="notice"><strong>Note:</strong> This GitHub-ready version uses browser-based rules and sample questions. It does not call an external AI service or send your data anywhere.</p>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">AI Study Planner & Quiz Generator · Educational mini project</div>
+  </footer>
+  <script src="script.js"></script>
+</body>
+</html>
